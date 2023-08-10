@@ -19,3 +19,12 @@ main=> (p01 '(a b c d))
 main=> (p02 '(a b c d))
 (c d)
 ```
+
+## Problem 03
+
+(*) Find the K'th element of a list.
+
+``` clojure
+main=> (p03 '(a b c d e) 3)
+c
+```

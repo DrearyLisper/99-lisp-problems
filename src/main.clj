@@ -19,6 +19,12 @@
        (p02 '(a a))
        '(a a))))
 
+(with-test
+  (defn p03 [l n]
+    (nth l (- n 1)))
+
+  (is (= (p03 '(a b c d e) 3) 'c)))
+
 (comment
   (main))
 
