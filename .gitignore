@@ -2,4 +2,5 @@
 .clj-kondo
 .lein-repl-history
 .lsp
+.nrepl-port
 target
