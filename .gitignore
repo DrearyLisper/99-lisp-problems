@@ -3,4 +3,5 @@
 .lein-repl-history
 .lsp
 .nrepl-port
+.clerk
 target
