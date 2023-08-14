@@ -1,5 +1,9 @@
 (ns main
-  (:require [clojure.test :refer [with-test is run-tests]]))
+  (:require [clojure.test :refer [with-test is run-tests]])
+  (:require [nextjournal.clerk :as clerk]))
+
+(comment
+  (clerk/serve! {:host "0.0.0.0" :watch-paths ["notebooks" "src"]}))
 
 (with-test
   (defn p01 [l]
