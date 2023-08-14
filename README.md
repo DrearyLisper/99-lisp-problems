@@ -16,8 +16,8 @@ main=> (p01 '(a b c d))
 (*) Find the last but one box of a list.
 
 ``` clojure
-main=> (p02 '(a b c d))
-(c d)
+main=> (p02 '(a b c d e))
+(d e)
 ```
 
 ## Problem 03
