@@ -7,9 +7,7 @@
 (comment
   (clerk/serve! {:host "0.0.0.0" :watch-paths ["notebooks" "src"]}))
 
-;; ## Problem 01
-;;
-;; (*) Find the last box of a list.
+;; P01 (*) Find the last box of a list.
 
 ^{:nextjournal.clerk/visibility {:code :fold}}
 (with-test
@@ -21,9 +19,7 @@
 
 (p01 '(a b c d))
 
-;; ## Problem 02
-;;
-;; (*) Find the last but one box of a list.
+;; P02 (*) Find the last but one box of a list.
 ^{:nextjournal.clerk/visibility {:code :fold}}
 (with-test
   (defn p02 [l]
@@ -38,9 +34,7 @@
 
 (p02 '(a b c d e))
 
-;; ## Problem 03
-;;
-;; (*) Find the K'th element of a list.
+;; P03 (*) Find the K'th element of a list.
 ^{:nextjournal.clerk/visibility {:code :fold}}
 (with-test
   (defn p03 [l n]
@@ -51,9 +45,7 @@
 (p03 '(a b c d e) 3)
 
 
-;; ## Problem 04
-;;
-;; (*) Find the number of elements of a list.
+;; P04 (*) Find the number of elements of a list.
 ^{:nextjournal.clerk/visibility {:code :fold}}
 (with-test
   (defn p04 [l]
@@ -64,6 +56,22 @@
   (is (= (p04 '(a b c d e)) 5)))
 
 (p04 '(a b c d e))
+
+;; P05 (*) Reverse a list.
+^{:nextjournal.clerk/visibility {:code :fold}}
+(with-test
+  (defn p05 [l]
+    (letfn [(inner
+              [a b]
+              (let [a-head (first a)]
+                (cond
+                  (empty? a) b
+                  :else (inner (rest a) (cons a-head b)))))]
+      (inner l '())))
+  (is (= (p05 '()) '()))
+  (is (= (p05 '(a b c d e)) '(e d c b a))))
+
+(p05 '(a b c d e))
 
 ^{:nextjournal.clerk/visibility {:code :hide}}
 (defn main []
