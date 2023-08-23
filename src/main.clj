@@ -50,6 +50,21 @@
 
 (p03 '(a b c d e) 3)
 
+
+;; ## Problem 04
+;;
+;; (*) Find the number of elements of a list.
+^{:nextjournal.clerk/visibility {:code :fold}}
+(with-test
+  (defn p04 [l]
+    (cond
+      (empty? l) 0
+      :else (+ 1 (p04 (rest l)))))
+  (is (= (p04 '()) 0))
+  (is (= (p04 '(a b c d e)) 5)))
+
+(p04 '(a b c d e))
+
 ^{:nextjournal.clerk/visibility {:code :hide}}
 (defn main []
   (run-tests 'main))
